@@ -13,20 +13,10 @@ import {
 } from "ag-grid-community";
 import { AgGridReact } from "ag-grid-react";
 import { Errors } from "../Errors";
+import { FreightShipment } from "@/utils/submitFreightShipments";
 
 // In real life, we should only register the modules we actually use
 ModuleRegistry.registerModules([AllCommunityModule]);
-
-interface FreightShipment extends Record<string, unknown> {
-  shipment_id: string;
-  origin_address: string;
-  destination_address: string;
-  mode: "air" | "sea" | "road" | "rail";
-  weight_kg: number;
-  progress_status: "pending" | "success" | "error";
-  error_message?: string;
-  results?: string;
-}
 
 const MAX_ROWS = 100;
 
